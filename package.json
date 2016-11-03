@@ -1,0 +1,8 @@
+{
+  "name": "mustache",
+  "version": "0.0.1",
+  "dependencies": {
+    "dat.gui": "^0.6.1",
+    "tracking": "^1.1.3"
+  }
+}
