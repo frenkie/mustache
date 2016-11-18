@@ -1,0 +1,62 @@
+body {
+    background-color: #4fc49f;
+    background-image:
+    repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+    repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+    linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+    linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+    background-size: 70px 120px;
+}
+
+h1 {
+    font-family: 'Norican', cursive;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    text-shadow: rgba(0,0,0, 0.6) 3px 2px 6px;
+}
+
+.frame-grabber {
+    position: relative;
+    width: 320px;
+    height: 240px;
+}
+
+video,
+canvas {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+
+.record {
+    position: fixed;
+    z-index: 2;
+
+    width: 200px;
+    height: 200px;
+    right: -10px;
+    bottom: -50px;
+
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    background: transparent url('../assets/rode-knop.png') no-repeat;
+    background-size: cover;
+}
+
+.recorded {
+    float: left;
+    width: 640px;
+    height: 480px;
+    background-size: cover;
+    background-color: #f89;
+}
+
+.slide-show img {
+    width: 200px;
+    margin: 0 8px 8px 0;
+}
