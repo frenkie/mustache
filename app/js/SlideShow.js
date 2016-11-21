@@ -2,15 +2,6 @@ import Vue from 'vue';
 import Slide from './Slide.js';
 import slideShowTemplate from '../templates/slideshow.vue!text';
 
-/*
-
-    Slideshow
-
-    -   Make a slice of 8 pieces in the slideshow (if there are
-    -   When 1 moves out, move the next one 1
-
- */
-
 export default Vue.component( 'slide-show', {
 
     template: slideShowTemplate,
