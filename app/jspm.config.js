@@ -39,7 +39,7 @@ SystemJS.config({
     "process": "npm:jspm-nodelibs-process@0.2.0",
     "text": "github:systemjs/plugin-text@0.0.9",
     "tracking": "npm:tracking@1.1.3",
-    "vue": "npm:vue@2.0.7/dist/vue.js"
+    "vue": "npm:vue@2.0.8/dist/vue.js"
   },
   meta: {
     "tracking/build/tracking-min.js": {
@@ -50,7 +50,7 @@ SystemJS.config({
       "format": "global",
       "exports": "tracking.ViolaJones.classifiers.face",
       "deps": [
-         "tracking/build/tracking-min.js"
+        "tracking/build/tracking-min.js"
       ]
     }
   },
