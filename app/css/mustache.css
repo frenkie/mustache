@@ -17,10 +17,45 @@ h1 {
     text-shadow: rgba(0,0,0, 0.6) 3px 2px 6px;
 }
 
-.frame-grabber {
-    position: relative;
-    width: 320px;
-    height: 240px;
+body .dg.ac {
+    z-index: 10;
+}
+
+.recorder-container {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right:0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    background-color: rgba( 0, 0, 0, 0.4 );
+}
+
+.recorder-container-close {
+    position: absolute;
+    top: 12px;
+    left: 22px;
+    color: white;
+    cursor: pointer;
+    font-size: 48px;
+    text-shadow: rgba(0,0,0, 0.6) 3px 2px 6px;
+}
+
+.recorder-container.recorder-container-active {
+    display: block;
+}
+
+.recorder-frame-grabber {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -160px;
+
+    width: 640px;
+    height: 480px;
 }
 
 video,
@@ -28,12 +63,47 @@ canvas {
     top: 0;
     left: 0;
     position: absolute;
+
+    -ms-transform: scale(2, 2); /* IE 9 */
+    -webkit-transform: scale(2, 2); /* Safari */
+    transform: scale(2, 2);
 }
 
+.recorder-snapshot {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    margin-left: -320px;
+    margin-top: -220px;
+    width: 640px;
+    height: 480px;
+    background-size: cover;
+}
+
+.recorder-snapshot-actions {
+    position: absolute;
+    top: -50px;
+    display: none;
+}
+
+.recorder-snapshot-actions-active {
+    display: block;
+}
+
+.recorder-snapshot-action {
+    display: inline-block;
+    color: white;
+    cursor: pointer;
+    font-size: 48px;
+    text-shadow: rgba(0,0,0, 0.6) 3px 2px 6px;
+    margin-right: 8px;
+}
 
 .record {
     position: fixed;
-    z-index: 2;
+    z-index: 4;
+    display: none;
 
     width: 200px;
     height: 200px;
@@ -48,15 +118,62 @@ canvas {
     background-size: cover;
 }
 
-.recorded {
-    float: left;
-    width: 640px;
-    height: 480px;
-    background-size: cover;
-    background-color: #f89;
+.record.recorder-available {
+    display: block;
 }
 
-.slide-show img {
-    width: 200px;
-    margin: 0 8px 8px 0;
+
+
+.slide-show {
+    display: none;
+    width: 640px;
+    height: 480px;
+    position: relative;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+.slide-show-active {
+    display: block;
+}
+
+.slide-show-slides {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+
+    transition: transform 1s;
+}
+
+.slide-show-slides.slide-show-slide-reset {
+    transition: none;
+}
+
+.slide {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 640px;
+    height: 480px;
+
+    background-size: contain;
+}
+
+
+.loader {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+
+    background:  rgba( 0, 0, 0, 0.6 ) url('../assets/loader.gif') no-repeat center center;
+}
+
+.loader.loader-active {
+    display: block;
 }

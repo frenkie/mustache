@@ -6,10 +6,16 @@ instant guestbook memory!
 
 ## todo
 
+-   Code Refactoring
+
+
+======
+
 -   Visually stunning ;)
     -
 
--   Code Refactoring
+
+
 
 ## nice todo
 
@@ -17,4 +23,4 @@ instant guestbook memory!
     Or timing?
 -  Social media? Upload photo's
 -  Camera Flash visual and sound when recording
--   Loader while recording?
+-   Loader while recording/saving, etc?

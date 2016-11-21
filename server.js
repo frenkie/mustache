@@ -11,6 +11,7 @@ var port = process.env.PORT || 8080;
 server.listen( port, ipAddress, function () {
 
     app.use( require('./routes/index') );
+    app.use( require('./routes/slides') );
     app.use( require('./routes/list') );
     app.use( require('./routes/upload') );
 

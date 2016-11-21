@@ -1,17 +1,11 @@
 SystemJS.config({
   paths: {
-    "npm:": "jspm_packages/npm/"
+    "npm:": "jspm_packages/npm/",
+    "github:": "jspm_packages/github/",
+    "mustache/": ""
   },
   browserConfig: {
-    "baseURL": "/",
-    "paths": {
-      "mustache/": "./"
-    }
-  },
-  nodeConfig: {
-    "paths": {
-      "mustache/": ""
-    }
+    "baseURL": "/"
   },
   devConfig: {
     "map": {
@@ -21,7 +15,7 @@ SystemJS.config({
   transpiler: "plugin-babel",
   packages: {
     "mustache": {
-      "main": "./js/impl.js",
+      "main": "mustache.js",
       "format": "esm",
       "meta": {
         "*.js": {
@@ -35,14 +29,17 @@ SystemJS.config({
 SystemJS.config({
   packageConfigPaths: [
     "npm:@*/*.json",
-    "npm:*.json"
+    "npm:*.json",
+    "github:*/*.json"
   ],
   map: {
     "dat.gui": "npm:dat.gui@0.6.1",
     "fs": "npm:jspm-nodelibs-fs@0.2.0",
     "path": "npm:jspm-nodelibs-path@0.2.1",
     "process": "npm:jspm-nodelibs-process@0.2.0",
-    "tracking": "npm:tracking@1.1.3"
+    "text": "github:systemjs/plugin-text@0.0.9",
+    "tracking": "npm:tracking@1.1.3",
+    "vue": "npm:vue@2.0.7/dist/vue.js"
   },
   meta: {
     "tracking/build/tracking-min.js": {

@@ -180,6 +180,12 @@ function saveImage () {
 
     if ( lastRecordedImage ) {
         addSlide( lastRecordedImage );
+
+        // test
+        var request = new XMLHttpRequest();
+        request.open('POST', '/upload', true);
+        request.setRequestHeader('Content-Type', 'text/plain; charset=UTF-8');
+        request.send( lastRecordedImage.src );
     }
 }
 

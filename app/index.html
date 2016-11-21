@@ -2,32 +2,37 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>tracking.js - face with camera</title>
+  <title>VPRO Mustache</title>
   <link href="https://fonts.googleapis.com/css?family=Norican" rel="stylesheet">
+  <link href="https://files.vpro.nl/fontface/iconfont/style.css" rel="stylesheet">
   <link rel="stylesheet" href="css/mustache.css">
 </head>
 <body>
 
   <h1>snorrengastenboek</h1>
 
-  <div class="frame-grabber">
-    <video id="video" width="320" height="240" preload autoplay loop muted></video>
-    <canvas id="canvas" width="320" height="240"></canvas>
-  </div>
-
-  <button class="record"></button>
-
-  <div class="temp">
-    <div class="recorded"></div>
-    <div class="actions"><button class="save">Save</button><button class="erase-last">Erase last</button></div>
-    <div class="slide-show"></div>
+  <div id="app">
+      <recorder
+          v-on:saved="onImageRecorded"
+          v-on:activated="onRecorderActivated"
+          v-on:deactivated="onRecorderDeActivated"
+      ></recorder>
+      <slide-show v-bind:slides="slides"
+                  :active="slideShowIsActive"
+                  :paused="recorderIsActive"
+      ></slide-show>
+      <loader :active="loaderIsActive"></loader>
   </div>
 
   <script src="jspm_packages/system.js"></script>
   <script src="jspm.config.js"></script>
   <script>
 
-      System.import('js/impl.js');
+      System.import('js/Mustache.js').then( function ( module ) {
+          new module.default({
+              el: '#app'
+          });
+      });
 
   </script>
 </body>
