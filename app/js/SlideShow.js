@@ -20,6 +20,7 @@ export default Vue.component( 'slide-show', {
         return {
             activePanelIndex: -1,
             panelCount: 8,
+            reset: false,
             showTime: 4000,
             slideSelection: [],
             slideWidth: 640,
@@ -108,8 +109,18 @@ export default Vue.component( 'slide-show', {
                     this.shiftSlides();
                 }
 
-                console.log( nextIndex, this.activePanelIndex );
-                this.activePanelIndex = nextIndex;
+                if ( nextIndex === 0 ) {
+                    this.activePanelIndex = this.panelCount; // make a nice full circle
+                    setTimeout( function () {
+
+                        this.reset = true;
+                        this.activePanelIndex = 0;
+
+                    }.bind( this ), 1000 );
+                } else {
+                    this.reset = false;
+                    this.activePanelIndex = nextIndex;
+                }
             }
 
             setTimeout( this.rotate.bind( this ), this.showTime );
@@ -144,6 +155,15 @@ export default Vue.component( 'slide-show', {
                 // start rotating and shifting.
                 this.paused = false;
                 setTimeout( this.rotate.bind( this ), this.showTime );
+            } else {
+
+                if ( val.length <= this.panelCount ) {
+                    for ( var i=0, il = 8; i < il; i++ ) {
+                        if ( val.length > i ) {
+                            this.slideSelection[ i ] = val[ i ];
+                        }
+                    }
+                }
             }
         }
     }
