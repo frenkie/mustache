@@ -2,6 +2,7 @@ SystemJS.config({
   paths: {
     "npm:": "jspm_packages/npm/",
     "github:": "jspm_packages/github/",
+    "vue": "npm:vue@2.0.8/dist/vue.js",
     "mustache/": ""
   },
   browserConfig: {
@@ -39,7 +40,7 @@ SystemJS.config({
     "process": "npm:jspm-nodelibs-process@0.2.0",
     "text": "github:systemjs/plugin-text@0.0.9",
     "tracking": "npm:tracking@1.1.3",
-    "vue": "npm:vue@2.0.8/dist/vue.js"
+    "vue": "npm:vue@2.0.8"
   },
   meta: {
     "tracking/build/tracking-min.js": {
@@ -54,5 +55,9 @@ SystemJS.config({
       ]
     }
   },
-  packages: {}
+  packages: {
+    "vue": {
+      "main": "dist/vue.js"
+    }
+  }
 });

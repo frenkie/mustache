@@ -140,6 +140,37 @@ export default Vue.component( 'recorder', {
             })
             .then( function () {
 
+                window.addEventListener( 'keyup', function ( e ) {
+                    var keyCode = e.keyCode;
+
+                    switch ( keyCode ) {
+
+                        case 27: // Escape
+                            this.deactivate();
+                            break;
+
+                        case 82: // R
+                            this.record();
+                            break;
+
+                        case 83: // S
+                            this.saveLastSnapshot();
+                            break;
+
+                        case 69: // E
+                            this.eraseLastSnapshot();
+                            break;
+
+                        case 37: // left arrow
+                            resetRandomizedAccessoryIndices();
+                            break;
+
+                        case 39: // right arrow
+                            resetRandomizedFrameIndices();
+                            break;
+                    }
+                }.bind( this ) );
+
                 this.available = true;
 
             }.bind( this ) );
