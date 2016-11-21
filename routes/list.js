@@ -10,8 +10,9 @@ function fileListingAsJson ( files ) {
         })
         .map( function ( name ) {
             return 'slides/'+ name;
-        }
-    );
+        })
+        .reverse()
+    ;
 }
 
 router.get( '/list', function ( req, res ) {

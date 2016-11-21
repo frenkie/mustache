@@ -13,9 +13,9 @@ router.post('/upload', bodyParser.text({
     fs.writeFile( __dirname +'/../database/'+ timestamp +'.png', base64Data, 'base64', function ( err ) {
 
         if ( err ) {
-            res.end('ok');
-        } else {
             res.end('notok');
+        } else {
+            res.end('ok');
         }
     });
 

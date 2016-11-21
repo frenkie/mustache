@@ -21,6 +21,7 @@ export default Vue.component( 'slide-show', {
             activePanelIndex: -1,
             panelCount: 8,
             reset: false,
+            rotateInterval: null,
             showTime: 4000,
             slideSelection: [],
             slideWidth: 640,
@@ -94,8 +95,6 @@ export default Vue.component( 'slide-show', {
 
             var nextIndex;
 
-            console.log( 'interval!' );
-
             if ( ! this.paused ) {
 
                 nextIndex = this.getNextPanelIndex();
@@ -122,19 +121,22 @@ export default Vue.component( 'slide-show', {
                     this.activePanelIndex = nextIndex;
                 }
             }
-
-            setTimeout( this.rotate.bind( this ), this.showTime );
         },
 
         shiftSlides: function () {
-            /*
-                Only if slides.length > panelCount
 
-                we have a shift index : which position in the carousel to replace
-                we have a slide index : which slide to push
+            console.log( 'inserting slide '+ ( this.shiftSlideIndex + 1 ) + ' on panel position '+ this.shiftInsertIndex );
+            this.slideSelection[ this.shiftInsertIndex ] = this.slides[ this.shiftSlideIndex ];
 
+            this.shiftSlideIndex++;
+            if ( this.shiftSlideIndex >= this.slides.length ) {
+                this.shiftSlideIndex = 0;
+            }
 
-             */
+            this.shiftInsertIndex++;
+            if ( this.shiftInsertIndex >= this.panelCount ) {
+                this.shiftInsertIndex = 0;
+            }
         }
     },
 
@@ -142,28 +144,45 @@ export default Vue.component( 'slide-show', {
 
         slides: function ( val ) {
 
+            var newSlideSelection = [];
+            var i=0;
+            while ( i < this.panelCount ) {
+                newSlideSelection.push( '' );
+                i++;
+            }
+
             if ( this.activePanelIndex === -1 ) {
 
-                for ( var i=0, il = 8; i < il; i++ ) {
-                    if ( this.slides.length > i ) {
-                        this.slideSelection[ i ] = this.slides[ i ];
+                for ( var j=0, jl = 8; j < jl; j++ ) {
+                    if ( this.slides.length > j ) {
+                        newSlideSelection[ j ] = this.slides[ j ];
                     }
                 }
 
+                this.slideSelection = newSlideSelection;
                 this.activePanelIndex = 0;
 
                 // start rotating and shifting.
                 this.paused = false;
-                setTimeout( this.rotate.bind( this ), this.showTime );
+                this.rotateInterval = setInterval( this.rotate.bind( this ), this.showTime );
+
             } else {
 
-                if ( val.length <= this.panelCount ) {
-                    for ( var i=0, il = 8; i < il; i++ ) {
-                        if ( val.length > i ) {
-                            this.slideSelection[ i ] = val[ i ];
-                        }
+                clearInterval( this.rotateInterval );
+
+                for ( var i=0, il = 8; i < il; i++ ) {
+                    if ( val.length > i ) {
+                        newSlideSelection[ i ] = val[ i ];
                     }
                 }
+
+                this.slideSelection = newSlideSelection;
+                this.reset = true;
+                this.shiftInsertIndex = 0;
+                this.shiftSlideIndex = -1;
+                this.activePanelIndex = 0;
+
+                this.rotateInterval = setInterval( this.rotate.bind( this ), this.showTime );
             }
         }
     }

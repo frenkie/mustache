@@ -192,12 +192,14 @@ export default Vue.component( 'recorder', {
 
                 request.onload = function () {
 
+                    this.eraseLastSnapshot();
                     this.$emit('saved');
 
                 }.bind( this );
 
                 request.onerror = function () {
 
+                    this.eraseLastSnapshot();
                     this.$emit('saved');
                 }.bind( this );
 
