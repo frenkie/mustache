@@ -168,6 +168,25 @@ canvas {
     background-size: contain;
 }
 
+.slide-actions {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    display: none;
+}
+
+.slide-actions-active {
+    display: block;
+}
+
+.slide-action {
+    display: inline-block;
+    color: white;
+    cursor: pointer;
+    font-size: 48px;
+    text-shadow: rgba(0,0,0, 0.6) 3px 2px 6px;
+    margin-right: 8px;
+}
 
 .loader {
     position: fixed;

@@ -57,6 +57,10 @@ export default Vue.component( 'slide-show', {
 
     methods: {
 
+        eraseSlide: function ( slidePath ) {
+            this.$emit( 'erase-slide', slidePath );
+        },
+
         getNextPanelIndex: function () {
             var nextIndex;
             var slideSelection = this.slideSelection;

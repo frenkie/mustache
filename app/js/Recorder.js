@@ -13,6 +13,17 @@ var imageFrames = [ 'frame1.png', 'frame2.png', 'frame3.png', 'frame4.png', 'fra
 var imageFramesLoaded;
 var imageFramesRandomisedIndex = [];
 
+// Browser polyfills
+//===================
+
+if (!window.URL) {
+  window.URL = window.URL || window.webkitURL || window.msURL || window.oURL;
+}
+
+if (!navigator.getUserMedia) {
+  navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ||
+  navigator.mozGetUserMedia || navigator.msGetUserMedia;
+}
 
 function captureHighQualityVideoFrame () {
 
@@ -145,19 +156,19 @@ export default Vue.component( 'recorder', {
 
                     switch ( keyCode ) {
 
-                        case 27: // Escape
+                        case 87: // W
                             this.deactivate();
                             break;
 
-                        case 82: // R
-                            this.record();
+                        case 65: // A
+                            this.record(); // activate, record and save all together
                             break;
 
                         case 83: // S
                             this.saveLastSnapshot();
                             break;
 
-                        case 69: // E
+                        case 68: // D
                             this.eraseLastSnapshot();
                             break;
 
@@ -186,6 +197,7 @@ export default Vue.component( 'recorder', {
 
         deactivate: function () {
             this.active = false;
+            this.eraseLastSnapshot();
             this.$emit('deactivated');
         },
 
@@ -200,7 +212,11 @@ export default Vue.component( 'recorder', {
 
             if ( this.active ) {
 
-                this.recordNow = true;
+                if ( ! this.lastSnapshot ) {
+                    this.recordNow = true;
+                } else {
+                    this.saveLastSnapshot();
+                }
 
             } else {
                 this.$emit('activated');

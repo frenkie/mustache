@@ -23,6 +23,27 @@ var Mustache = Vue.extend({
 
     methods: {
 
+        eraseSlide: function ( slidePath ) {
+            this.loaderIsActive = true;
+
+            var request = new XMLHttpRequest();
+            request.open('GET', '/erase/'+ slidePath.split('/').pop(), true );
+
+            request.onload = function () {
+                if ( request.status >= 200 && request.status < 400 ) {
+                    this.loaderIsActive = false;
+                    this.fetchSlides();
+                }
+
+            }.bind( this );
+
+            request.onerror = function () {
+                this.loaderIsActive = false;
+            }.bind( this );
+
+            request.send();
+        },
+
         fetchSlides: function () {
 
             this.loaderIsActive = true;

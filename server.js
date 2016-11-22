@@ -14,6 +14,7 @@ server.listen( port, ipAddress, function () {
     app.use( require('./routes/slides') );
     app.use( require('./routes/list') );
     app.use( require('./routes/upload') );
+    app.use( require('./routes/erase') );
 
     debug( 'started on localhost:' + port );
 } );

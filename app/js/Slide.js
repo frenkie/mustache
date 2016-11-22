@@ -1,8 +1,9 @@
 import Vue from 'vue';
+import slideTemplate from '../templates/slide.vue!text';
 
 export default Vue.component( 'slide', {
-    template: '<div class="slide" v-bind:style="slideStyle"></div>',
-    props: ['img', 'translation', 'rotation'],
+    template: slideTemplate,
+    props: ['img', 'translation', 'rotation', 'active'],
 
     computed: {
         slideStyle: function () {
@@ -10,6 +11,12 @@ export default Vue.component( 'slide', {
                 backgroundImage: ( this.img !== '' ) ? 'url("'+ this.img +'")' : '',
                 transform : 'rotateY('+ this.rotation +'deg) translateZ('+ ( this.translation ) +'px)'
             }
+        }
+    },
+
+    methods: {
+        erase: function () {
+            this.$emit( 'erase', this.img )
         }
     }
 });

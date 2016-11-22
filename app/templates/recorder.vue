@@ -1,13 +1,11 @@
 <div class="recorder">
     <big-button v-on:click.native="record"
-                v-on:keyup.82="record"
                 v-bind:class="{ 'recorder-available': available }"></big-button>
 
     <div class="recorder-container" v-bind:class="{ 'recorder-container-active': active }">
 
         <span class="recorder-container-close icon-close"
               v-on:click="deactivate"
-              v-on:keyup.27="deactivate"
         ></span>
 
         <div class="recorder-frame-grabber">
