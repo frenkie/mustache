@@ -4,6 +4,8 @@ Pimp your party with Mustache! Get your friends in front of the camera and
 get randomized mustaches and photo frames. Press the big button and voila, an
 instant guestbook memory!
 
+![Mustache camera mode](/screenshot.jpg?raw=true)
+
 ## install
 An `npm install` should do the trick.
 Afterwards do `npm start` or `npm run debug` to run a server on 
