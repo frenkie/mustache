@@ -1,7 +1,7 @@
 # Mustache (working title)
 
 Pimp your party with Mustache! Get your friends in front of the camera and
-get randomized beards and mustaches. Press the big button and voila, an
+get randomized mustaches and photo frames. Press the big button and voila, an
 instant guestbook memory!
 
 ## install
@@ -16,6 +16,8 @@ You can use your mouse to interact with the site or the following keys:
 -   S : Save a snapshot
 -   D : Delete a snapshot in camera mode
 -   W : Exit camera mode
+-   Left arrow : change mustache
+-   Right arrow : change frame
 
 No browser feature detection is done, so for now you're save in the latest version of
 Chrome.
