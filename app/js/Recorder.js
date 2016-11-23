@@ -5,11 +5,11 @@ import tracking from 'tracking/build/tracking-min.js';
 import faceTracking from 'tracking/build/data/face-min.js';
 import Vue from 'vue';
 
-var faceAccessories = [ 'mustache.png', 'anonymous.png', 'mario.png', 'dali.png', 'eagles.png', '70s.png' ];
+var faceAccessories = [ 'mustache.png', 'anonymous.png', 'zappa.png', 'pringles.png', 'split.png', 'mario.png', 'dali.png', 'eagles.png', '70s.png', 'pringles2.png' ];
 var faceAccessoriesLoaded;
 var faceAccessoriesRandomisedIndex = [];
 
-var imageFrames = [ 'frame1.png', 'frame2.png', 'frame3.png', 'frame4.png', 'frame5.png' ];
+var imageFrames = [ 'frame1.png', 'frame2.png', 'frame3.png', 'frame4.png', 'frame5.png', 'frame6.png', 'frame7.png' ];
 var imageFramesLoaded;
 var imageFramesRandomisedIndex = [];
 
