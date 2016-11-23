@@ -124,7 +124,20 @@ canvas {
     display: block;
 }
 
+.recorder-camera-flash {
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: transparent;
+    transition: background-color 300ms ease-in;
+}
 
+.recorder-camera-flash.recorder-camera-flash-active {
+    background-color: white;
+}
 
 .slide-show {
     position: absolute;

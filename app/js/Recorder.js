@@ -16,10 +16,6 @@ var imageFramesRandomisedIndex = [];
 // Browser polyfills
 //===================
 
-if (!window.URL) {
-  window.URL = window.URL || window.webkitURL || window.msURL || window.oURL;
-}
-
 if (!navigator.getUserMedia) {
   navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ||
   navigator.mozGetUserMedia || navigator.msGetUserMedia;
@@ -132,8 +128,10 @@ export default Vue.component( 'recorder', {
     template: recorderTemplate,
     data: function () {
         return {
+            audio: null,
             available: false,
             active: false,
+            flashCamera: false,
             lastSnapshot: null,
             recordNow: false,
             trackerStarted: false
@@ -141,6 +139,11 @@ export default Vue.component( 'recorder', {
     },
 
     created: function () {
+
+        this.audio = document.createElement('audio');
+        this.audio.preload = true;
+        this.audio.src = 'assets/camera-click.mp3';
+
         preloadAssets( faceAccessories ).then( function ( preloaded ) {
 
             faceAccessoriesLoaded = preloaded;
@@ -300,6 +303,12 @@ export default Vue.component( 'recorder', {
             var recordContext = recordCanvas.getContext('2d');
             var canvas = document.getElementById( 'canvas' );
             var video = document.getElementById( 'video' );
+
+            this.audio.play();
+            this.flashCamera = true;
+            setTimeout( function () {
+                this.flashCamera = false;
+            }.bind( this ), 100);
 
             captureHighQualityVideoFrame().then( function ( highQualityVideo ) {
 

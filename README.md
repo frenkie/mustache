@@ -22,6 +22,4 @@ Chrome.
 
 ## still some nice to haves
 
--   A visual camera flash and sound when recording ?
 -   Upload photo's to Social Media?
--   Erase an existing photo

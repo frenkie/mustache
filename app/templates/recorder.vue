@@ -4,6 +4,10 @@
 
     <div class="recorder-container" v-bind:class="{ 'recorder-container-active': active }">
 
+        <div class="recorder-camera-flash"
+            v-bind:class="{ 'recorder-camera-flash-active': flashCamera }"
+        ></div>
+
         <span class="recorder-container-close icon-close"
               v-on:click="deactivate"
         ></span>
