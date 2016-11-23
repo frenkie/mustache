@@ -159,8 +159,13 @@ export default Vue.component( 'recorder', {
 
                     switch ( keyCode ) {
 
-                        case 87: // W
-                            this.deactivate();
+                        case 68:
+                        case 27: // D, ESC
+                            if ( this.lastSnapshot ) {
+                                this.eraseLastSnapshot();
+                            } else {
+                                this.deactivate();
+                            }
                             break;
 
                         case 65: // A
@@ -169,10 +174,6 @@ export default Vue.component( 'recorder', {
 
                         case 83: // S
                             this.saveLastSnapshot();
-                            break;
-
-                        case 68: // D
-                            this.eraseLastSnapshot();
                             break;
 
                         case 37: // left arrow
