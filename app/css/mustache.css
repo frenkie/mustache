@@ -216,3 +216,271 @@ canvas {
 .loader.loader-active {
     display: block;
 }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'vpro-iconfont' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-by:before {
+  content: "\e912";
+}
+.icon-cc:before {
+  content: "\e913";
+}
+.icon-nc:before {
+  content: "\e914";
+}
+.icon-nd:before {
+  content: "\e915";
+}
+.icon-pd:before {
+  content: "\e916";
+}
+.icon-sa:before {
+  content: "\e917";
+}
+.icon-headphone:before {
+  content: "\e906";
+}
+.icon-read:before {
+  content: "\e907";
+}
+.icon-view:before {
+  content: "\e908";
+}
+.icon-halfstar:before {
+  content: "\2a";
+}
+.icon-edit:before {
+  content: "\e904";
+}
+.icon-trash:before {
+  content: "\e905";
+}
+.icon-pause:before {
+  content: "\70";
+}
+.icon-play:before {
+  content: "\71";
+}
+.icon-listen:before {
+  content: "\6c";
+}
+.icon-mute:before {
+  content: "\6d";
+}
+.icon-next:before {
+  content: "\6e";
+}
+.icon-close:before {
+  content: "\63";
+}
+.icon-fullscreen:before {
+  content: "\66";
+}
+.icon-embed:before {
+  content: "\65";
+}
+.icon-info:before {
+  content: "\69";
+}
+.icon-react:before {
+  content: "\73";
+}
+.icon-scrubber:before {
+  content: "\74";
+}
+.icon-search:before {
+  content: "\75";
+}
+.icon-cookies:before {
+  content: "\64";
+}
+.icon-download:before {
+  content: "\67";
+}
+.icon-arrowleft:before {
+  content: "\61";
+}
+.icon-arrowright:before {
+  content: "\62";
+}
+.icon-navigation:before {
+  content: "\72";
+}
+.icon-exitfullscreen:before {
+  content: "\68";
+}
+.icon-calendar:before {
+  content: "\6a";
+}
+.icon-shop:before {
+  content: "\76";
+}
+.icon-share:before {
+  content: "\77";
+}
+.icon-favorite:before {
+  content: "\6b";
+}
+.icon-alert:before {
+  content: "\7a";
+}
+.icon-pulldown:before {
+  content: "\7b";
+}
+.icon-afterten:before {
+  content: "\7c";
+}
+.icon-check:before {
+  content: "\4d";
+}
+.icon-vpro:before {
+  content: "\56";
+}
+.icon-flags:before {
+  content: "\57";
+}
+.icon-dots:before {
+  content: "\58";
+}
+.icon-vprooutline:before {
+  content: "\59";
+}
+.icon-alleleeftijden:before {
+  content: "\41";
+}
+.icon-6jaar:before {
+  content: "\42";
+}
+.icon-9jaar:before {
+  content: "\43";
+}
+.icon-12jaar:before {
+  content: "\44";
+}
+.icon-16jaar:before {
+  content: "\45";
+}
+.icon-geweld:before {
+  content: "\4a";
+}
+.icon-angst:before {
+  content: "\49";
+}
+.icon-seks:before {
+  content: "\48";
+}
+.icon-discriminatie:before {
+  content: "\47";
+}
+.icon-drugs:before {
+  content: "\46";
+}
+.icon-groftaal:before {
+  content: "\4b";
+}
+.icon-popout:before {
+  content: "\78";
+}
+.icon-pausemall:before {
+  content: "\4c";
+}
+.icon-alertmedium:before {
+  content: "\7d";
+}
+.icon-aftertenmedium:before {
+  content: "\79";
+}
+.icon-alertsmall:before {
+  content: "\4e";
+}
+.icon-aftertensmall:before {
+  content: "\7f";
+}
+.icon-externallink:before {
+  content: "\51";
+}
+.icon-up:before {
+  content: "\7e";
+}
+.icon-previous:before {
+  content: "\31";
+}
+.icon-down:before {
+  content: "\5a";
+}
+.icon-collectie:before {
+  content: "\55";
+}
+.icon-showgrid:before {
+  content: "\50";
+}
+.icon-showlist:before {
+  content: "\52";
+}
+.icon-watchlater:before {
+  content: "\54";
+}
+.icon-heart:before {
+  content: "\53";
+}
+.icon-showexpanded:before {
+  content: "\5d";
+}
+.icon-play-circle:before {
+  content: "\40";
+}
+.icon-subtitles-active:before {
+  content: "\e900";
+}
+.icon-subtitles-inactive:before {
+  content: "\e901";
+}
+.icon-collapsed:before {
+  content: "\6f";
+}
+.icon-person:before {
+  content: "\e902";
+}
+.icon-clapboard:before {
+  content: "\e903";
+}
+.icon-facebook:before {
+  content: "\e909";
+}
+.icon-twitter:before {
+  content: "\e90a";
+}
+.icon-youtube:before {
+  content: "\e90b";
+}
+.icon-soundcloud:before {
+  content: "\e90c";
+}
+.icon-spotify:before {
+  content: "\e90d";
+}
+.icon-instagram:before {
+  content: "\e90e";
+}
+.icon-tv:before {
+  content: "\e90f";
+}
+.icon-radio:before {
+  content: "\e910";
+}
+.icon-icon-bandcamp:before {
+  content: "\e911";
+}

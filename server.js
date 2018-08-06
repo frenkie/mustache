@@ -1,7 +1,18 @@
 var debug = require('debug')('mustache');
+var fs = require('fs');
 var express = require('express'); // Docs http://expressjs.com/
+var https = require('https');
+
 var app = express();
-var server = require('http').Server( app );
+var options = {
+    key: fs.readFileSync( __dirname +'/server.key'),
+     cert: fs.readFileSync( __dirname +'/server.crt'),
+    passphrase: 'frenkie',
+ requestCert: false,
+ rejectUnauthorized: false
+};
+
+var server = https.createServer( options, app );
 
 // binding to 0.0.0.0 allows connections from any other computer in the network
 // to your ip address

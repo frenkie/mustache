@@ -27,3 +27,11 @@ Chrome.
 ## still some nice to haves
 
 -   Upload photo's to Social Media?
+
+## versions
+
+## 0.0.2
+Added HTTPS server to be able to use
+
+## 0.0.1
+First!

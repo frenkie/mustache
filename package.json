@@ -1,6 +1,6 @@
 {
   "name": "mustache",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "body-parser": "~1.15.2",
     "debug": "~2.3.2",
